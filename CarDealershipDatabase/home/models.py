@@ -3,32 +3,48 @@ from django.db import models
 # Create your models here.
 class Car(models.Model):
     vin = models.CharField(max_length=17, primary_key=True)
-    make = models.CharField(max_length=17)
+    make = models.CharField(max_length=200)
     year = models.IntegerField()
-    color = models.CharField(max_length=15)
+    color = models.CharField(max_length=200)
     weight = models.IntegerField()
-    engine = models.CharField(max_length=20)
-    transmission = models.CharField(max_length=15)
-    previous_owner = models.CharField(max_length=30)
+    engine = models.CharField(max_length=200)
+    transmission = models.CharField(max_length=150)
+    previous_owner = models.CharField(max_length=200)
 
-class Company(models.Model):
-    company_name = models.CharField(max_length=20, primary_key=True)
-    brand = models.CharField(max_length=20)
+    def __str__(self):
+        return self.vin + ' ' + self.make + ' ' + str(self.year) + ' ' + self.color 
 
+#class Company(models.Model):
+ #   company_name = models.CharField(max_length=200, primary_key=True)
+  #  brand = models.CharField(max_length=200)
+
+   # def __str__(self):
+    #    return self.company_name + ' ' + self.brand
+    
 class Brand(models.Model):
-    company_name = models.CharField(max_length=20)
-    make = models.CharField(max_length=17)
+    company_name = models.CharField(max_length=200)
+    make = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.company_name + ' ' + self.make
+        
+    
 class Dealer(models.Model):
     dealer_id = models.IntegerField(primary_key=True)
-    customers = models.CharField(max_length=20)
-    address = models.CharField(max_length=20)
-    phone = models.CharField(max_length=20)
+    customers = models.CharField(max_length=200)
+    address = models.CharField(max_length=200)
+    phone = models.CharField(max_length=200)
 
-class Customers(models.Model):
+    def __str__(self):
+        return str(self.dealer_id) + ' ' + self.customers + ' ' + self.address + ' ' + self.phone
+
+
+class Customer(models.Model):
     customer_id = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=20)
-    purchase = models.CharField(max_length=20)
-    address = models.CharField(max_length=20)
-    phone = models.CharField(max_length=20)
-    
+    name = models.CharField(max_length=200)
+    purchase = models.CharField(max_length=200)
+    address = models.CharField(max_length=200)
+    phone = models.CharField(max_length=200)
+
+    def __str__(self):
+        return str(self.customer_id) + ' ' + self.name + ' ' + self.purchase + ' ' + self.address + ' ' + self.phone

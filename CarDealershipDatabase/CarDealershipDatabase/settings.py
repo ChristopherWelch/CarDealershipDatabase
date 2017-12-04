@@ -55,7 +55,7 @@ ROOT_URLCONF = 'CarDealershipDatabase.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['C:/Users/Anthony/Desktop/CDD/CarDealershipDatabase/home/html/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
