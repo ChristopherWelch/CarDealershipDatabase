@@ -4,6 +4,8 @@ from django.contrib import admin
 
 from .models import Car, Brand, Dealer, Customer
 
+
+
 admin.site.register(Car)
 #admin.site.register(Company)
 admin.site.register(Brand)

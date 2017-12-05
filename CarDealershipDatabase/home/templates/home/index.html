@@ -1,7 +1,11 @@
+<form method = 'GET' action =''>
+	<input type = 'text' name ='q' placeholder='search brands'/>
+	<input type = 'submit' value = 'search'/>
+</form>
 <ul>
-	{% for car in all_cars %}
+	{% for brand in all_Brands %}
 	<li>
-		<a href ="/home/{{ car.pk }}/">{{ car.make }}</a>
+		<a href ="/home/{{ brand.pk }}/">{{ brand.company_name }}</a>
 	</li>
 	{% endfor %}
 </ul>

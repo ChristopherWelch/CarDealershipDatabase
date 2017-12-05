@@ -1,5 +1,17 @@
 from django.db import models
+from django.conf import settings
+
 # Create your models here.
+
+
+
+
+class Brand(models.Model):
+    company_name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.company_name
+
 class Car(models.Model):
     vin = models.CharField(max_length=17, primary_key=True)
     make = models.CharField(max_length=200)
@@ -7,23 +19,10 @@ class Car(models.Model):
     color = models.CharField(max_length=200)
     previous_owner = models.CharField(max_length=200)
     source = models.FileField(upload_to='cars/%Y/%m/%d/',default="abc")
+    brand = models.ForeignKey(Brand)
 
     def __str__(self):
-        return self.vin + ' ' + self.make + ' ' + str(self.year) + ' ' + self.color 
-
-#class Company(models.Model):
- #   company_name = models.CharField(max_length=200, primary_key=True)
-  #  brand = models.CharField(max_length=200)
-
-   # def __str__(self):
-    #    return self.company_name + ' ' + self.brand
-    
-class Brand(models.Model):
-    company_name = models.CharField(max_length=200)
-    make = models.CharField(max_length=200)
-
-    def __str__(self):
-        return self.company_name + ' ' + self.make
+        return self.vin + ' ' + self.make + ' ' + str(self.year) + ' ' + self.color
         
     
 class Dealer(models.Model):
