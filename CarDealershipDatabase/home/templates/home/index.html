@@ -1,0 +1,7 @@
+<ul>
+	{% for car in all_cars %}
+	<li>
+		<a href ="/home/{{ car.pk }}/">{{ car.make }}</a>
+	</li>
+	{% endfor %}
+</ul>
