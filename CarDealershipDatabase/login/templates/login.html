@@ -1,4 +1,6 @@
 <!-- LOGIN PAGE -->
+
+{% block content %}
 <!DOCTYPE HTML>
 
 <html>
@@ -12,18 +14,14 @@
 </head>
 
 <body>
- 	<h1>Generic Car Dealership Database Software</h1>
 
- 	<hr style="padding-bottom: 2px;" />
+  <h1>Generic Car Dealership Database Software</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
 
-  	<form style="padding-top: 10px;">
-  		USERNAME: <input name="user" style="margin-left: 8px;" type="text" /> <br>
-  		PASSWORD: <input name="password" type="text" /> 
-  		<form/>
-  		<br> 
-  		<br> 
-  		<input type="submit" value="Submit" />
- 	</form>
 </body>
-		
 </html>
+{% endblock %}
