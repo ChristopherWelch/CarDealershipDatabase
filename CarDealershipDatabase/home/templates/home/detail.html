@@ -1,3 +1,19 @@
+{% load static %}
+<html>
+<head>
+    <style>
+        body {
+            text-align: left;
+            background-color: #90afdb;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-right: 40px;
+            padding-left: 40px;
+        }
+    </style>
+</head>
+
+<body>
 <ul>
 {% for car in brand.car_set.all %}
 <li>
@@ -5,3 +21,4 @@
 </li>
 {% endfor %}
 </ul>
+</body>

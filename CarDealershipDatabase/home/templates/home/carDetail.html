@@ -1,6 +1,23 @@
-<img src = "{{ car.source.url }}">
-<h1>{{ car.make }}</h1>
-<h1>{{ car.year }}</h1>
-<h1>{{ car.previous_owner }}</h1>
-<h1>{{ car.color}} </h1>
-<h1>{{ car.vin }} </h1>
+{% load static %}
+<html>
+<head>
+    <style>
+        body {
+            text-align: center;
+            background-color: #90afdb;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-right: 40px;
+            padding-left: 40px;
+        }
+    </style>
+</head>
+<body>
+<img src = "{{ car.source.url }}" width = "500px" height="400px">
+<hr>
+<h2>Make: {{ car.make }}</h2>
+<h2>Year: {{ car.year }}</h2>
+<h2>Previous Owner: {{ car.previous_owner }}</h2>
+<h2>Color: {{ car.color}} </h2>
+<h2>VIN: {{ car.vin }} </h2>
+</body>

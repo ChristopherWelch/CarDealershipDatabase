@@ -1,3 +1,19 @@
+{% load static %}
+<html>
+<head>
+    <style>
+        body {
+            text-align: left;
+            background-color: #90afdb;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-right: 40px;
+            padding-left: 40px;
+        }
+    </style>
+</head>
+
+<body>
 <form method = 'GET' action =''>
 	<input type = 'text' name ='q' placeholder='search brands'/>
 	<input type = 'submit' value = 'search'/>
@@ -9,3 +25,4 @@
 	</li>
 	{% endfor %}
 </ul>
+</body>
